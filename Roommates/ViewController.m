@@ -17,7 +17,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    x = 0;
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -29,8 +28,9 @@
 
 
 - (IBAction)buttonPressed:(id)sender {
-    label.text = [NSString stringWithFormat:@"%d",x];
-    x++;
+    NSString *user = username.text;
+    NSString *pass = password.text;
+    NSLog(@"user: %@, pass: %@", user, pass);
 }
 
 

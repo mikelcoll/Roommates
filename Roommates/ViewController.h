@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController {
-    IBOutlet UIButton *button;
-    IBOutlet UILabel *label;
-    NSInteger x;
+    IBOutlet UITextField *username;
+    IBOutlet UITextField *password;
+    IBOutlet UIButton *login;
 }
 
 - (IBAction)buttonPressed:(id)sender;

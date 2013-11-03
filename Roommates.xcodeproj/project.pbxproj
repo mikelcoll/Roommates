@@ -199,6 +199,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "rich and famous";
 				TargetAttributes = {
+					43CFA3B6182664C30019494D = {
+						DevelopmentTeam = D2T57WG2L7;
+					};
 					43CFA3D7182664C30019494D = {
 						TestTargetID = 43CFA3B6182664C30019494D;
 					};
@@ -378,6 +381,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Roommates/Roommates-Prefix.pch";
 				INFOPLIST_FILE = "Roommates/Roommates-Info.plist";
@@ -391,6 +395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Roommates/Roommates-Prefix.pch";
 				INFOPLIST_FILE = "Roommates/Roommates-Info.plist";

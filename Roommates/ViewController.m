@@ -17,6 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    x = 0;
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -25,5 +26,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+- (IBAction)buttonPressed:(id)sender {
+    label.text = [NSString stringWithFormat:@"%d",x];
+    x++;
+}
+
 
 @end

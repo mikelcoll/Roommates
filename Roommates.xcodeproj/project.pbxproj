@@ -21,6 +21,8 @@
 		43CFA3DC182664C30019494D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CFA3BE182664C30019494D /* UIKit.framework */; };
 		43CFA3E4182664C30019494D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43CFA3E2182664C30019494D /* InfoPlist.strings */; };
 		43CFA3E6182664C30019494D /* RoommatesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CFA3E5182664C30019494D /* RoommatesTests.m */; };
+		B05D723118281B5D00B24D8D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B05D723018281B5D00B24D8D /* libsqlite3.dylib */; };
+		B05D723418281C7200B24D8D /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B05D723318281C7200B24D8D /* DBManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		43CFA3E1182664C30019494D /* RoommatesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RoommatesTests-Info.plist"; sourceTree = "<group>"; };
 		43CFA3E3182664C30019494D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		43CFA3E5182664C30019494D /* RoommatesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoommatesTests.m; sourceTree = "<group>"; };
+		B05D723018281B5D00B24D8D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		B05D723218281C7200B24D8D /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		B05D723318281C7200B24D8D /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B05D723118281B5D00B24D8D /* libsqlite3.dylib in Frameworks */,
 				43CFA3BD182664C30019494D /* CoreGraphics.framework in Frameworks */,
 				43CFA3BF182664C30019494D /* UIKit.framework in Frameworks */,
 				43CFA3BB182664C30019494D /* Foundation.framework in Frameworks */,
@@ -101,6 +107,7 @@
 		43CFA3B9182664C30019494D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B05D723018281B5D00B24D8D /* libsqlite3.dylib */,
 				43CFA3BA182664C30019494D /* Foundation.framework */,
 				43CFA3BC182664C30019494D /* CoreGraphics.framework */,
 				43CFA3BE182664C30019494D /* UIKit.framework */,
@@ -119,6 +126,8 @@
 				43CFA3D0182664C30019494D /* ViewController.m */,
 				43CFA3D2182664C30019494D /* Images.xcassets */,
 				43CFA3C1182664C30019494D /* Supporting Files */,
+				B05D723218281C7200B24D8D /* DBManager.h */,
+				B05D723318281C7200B24D8D /* DBManager.m */,
 			);
 			path = Roommates;
 			sourceTree = "<group>";
@@ -255,6 +264,7 @@
 				43CFA3D1182664C30019494D /* ViewController.m in Sources */,
 				43CFA3CB182664C30019494D /* AppDelegate.m in Sources */,
 				43CFA3C7182664C30019494D /* main.m in Sources */,
+				B05D723418281C7200B24D8D /* DBManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +475,7 @@
 				43CFA3EB182664C30019494D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		43CFA3EC182664C30019494D /* Build configuration list for PBXNativeTarget "RoommatesTests" */ = {
 			isa = XCConfigurationList;
@@ -473,6 +484,7 @@
 				43CFA3EE182664C30019494D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -29,8 +29,7 @@ static sqlite3_stmt *statement = nil;
     (NSDocumentDirectory, NSUserDomainMask, YES);
     docsDir = dirPaths[0];
     // Build the path to the database file
-    databasePath = [[NSString alloc] initWithString:
-                    [docsDir stringByAppendingPathComponent: @"student.db"]];
+    databasePath = [[NSString alloc] initWithString:[docsDir stringByAppendingPathComponent: @"roommates.db"]];
     BOOL isSuccess = YES;
     NSFileManager *filemgr = [NSFileManager defaultManager];
     if ([filemgr fileExistsAtPath: databasePath ] == NO)
@@ -39,10 +38,17 @@ static sqlite3_stmt *statement = nil;
         if (sqlite3_open(dbpath, &database) == SQLITE_OK)
         {
             char *errMsg;
-            const char *sql_stmt =
-            "create table if not exists studentsDetail (regno integer primary key, name text, department text, year text)";
-            if (sqlite3_exec(database, sql_stmt, NULL, NULL, &errMsg)
-                != SQLITE_OK)
+            const char *sql_stmt = "create table if not exists flat (id integer primary key,"
+                                                                    "name text,"
+                                                                    "adress text,"
+                                                                    "phone text,"
+                                                                    "m2 real,"
+                                                                    "price_rent real,"
+                                                                    "price_water real,"
+                                                                    "price_light real,"
+                                                                    "price_internet real,"
+                                                                    "price_phone real)";
+            if (sqlite3_exec(database, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK)
             {
                 isSuccess = NO;
                 NSLog(@"Failed to create table");

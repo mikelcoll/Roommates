@@ -114,3 +114,5 @@ static sqlite3_stmt *statement = nil;
     }
     return nil;
 }
+
+@end

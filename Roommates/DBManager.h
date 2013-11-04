@@ -24,7 +24,7 @@
        price_water:(double)price_water
        price_light:(double)price_light
        price_internet:(double)price_internet
-       price_phone:(double)price_phone;
--(NSArray*) findByRegisterNumber:(NSString*)registerNumber;
-
+       price_phone:(double)price_phone
+       inhabitants:(NSInteger)inhabitants;
+- (NSArray*) findByTelephone:(NSString*)telephone;
 @end

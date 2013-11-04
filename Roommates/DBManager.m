@@ -47,7 +47,8 @@ static sqlite3_stmt *statement = nil;
                                                                     "price_water real,"
                                                                     "price_light real,"
                                                                     "price_internet real,"
-                                                                    "price_phone real)";
+                                                                    "price_phone real,"
+                                                                    "inhabitants integer)";
             if (sqlite3_exec(database, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK)
             {
                 isSuccess = NO;
@@ -74,12 +75,13 @@ static sqlite3_stmt *statement = nil;
             price_light:(double)price_light
             price_internet:(double)price_internet
             price_phone:(double)price_phone
+            inhabitants:(NSInteger)inhabitants
 {
     const char *dbpath = [databasePath UTF8String];
     if (sqlite3_open(dbpath, &database) == SQLITE_OK)
     {
-        NSString *insertSQL = [NSString stringWithFormat:@"insert into studentsDetail (name, address, phone, m2, price_rent, price_water, price_light, price_internet, price_phone) values (\"%@\",\"%@\", \"%@\", \"%g\", \"%g\", \"%g\", \"%g\", \"%g\", \"%g\" )",
-                               name, address, phone, m2, price_rent, price_water, price_light, price_internet, price_phone];
+        NSString *insertSQL = [NSString stringWithFormat:@"insert into studentsDetail (name, address, phone, m2, price_rent, price_water, price_light, price_internet, price_phone, inhabitants) values (\"%@\",\"%@\", \"%@\", \"%g\", \"%g\", \"%g\", \"%g\", \"%g\", \"%g\" , \"%@\")",
+                               name, address, phone, m2, price_rent, price_water, price_light, price_internet, price_phone, inhabitants];
         const char *insert_stmt = [insertSQL UTF8String];
         sqlite3_prepare_v2(database, insert_stmt,-1, &statement, NULL);
         if (sqlite3_step(statement) == SQLITE_DONE)
@@ -95,7 +97,7 @@ static sqlite3_stmt *statement = nil;
 }
 
 
-- (NSArray*) findByRegisterNumber:(NSString*)registerNumber
+- (NSArray*) findByTelephone:(NSString*)telephone
 {
     const char *dbpath = [databasePath UTF8String];
     if (sqlite3_open(dbpath, &database) == SQLITE_OK)

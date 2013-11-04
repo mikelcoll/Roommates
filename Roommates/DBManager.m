@@ -38,10 +38,9 @@ static sqlite3_stmt *statement = nil;
         if (sqlite3_open(dbpath, &database) == SQLITE_OK)
         {
             char *errMsg;
-            const char *sql_stmt = "create table if not exists flat (id integer primary key autoincrement,"
+            const char *sql_stmt = "create table if not exists flat (phone text primary key,"
                                                                     "name text,"
                                                                     "address text,"
-                                                                    "phone text,"
                                                                     "m2 real,"
                                                                     "price_rent real,"
                                                                     "price_water real,"
@@ -80,8 +79,8 @@ static sqlite3_stmt *statement = nil;
     const char *dbpath = [databasePath UTF8String];
     if (sqlite3_open(dbpath, &database) == SQLITE_OK)
     {
-        NSString *insertSQL = [NSString stringWithFormat:@"insert into studentsDetail (name, address, phone, m2, price_rent, price_water, price_light, price_internet, price_phone, inhabitants) values (\"%@\",\"%@\", \"%@\", \"%g\", \"%g\", \"%g\", \"%g\", \"%g\", \"%g\" , \"%@\")",
-                               name, address, phone, m2, price_rent, price_water, price_light, price_internet, price_phone, inhabitants];
+        NSString *insertSQL = [NSString stringWithFormat:@"insert into studentsDetail (phone, name, address, m2, price_rent, price_water, price_light, price_internet, price_phone, inhabitants) values (\"%@\",\"%@\", \"%@\", \"%g\", \"%g\", \"%g\", \"%g\", \"%g\", \"%g\" , \"%ld\")",
+                               phone, name, address, m2, price_rent, price_water, price_light, price_internet, price_phone, (long)inhabitants];
         const char *insert_stmt = [insertSQL UTF8String];
         sqlite3_prepare_v2(database, insert_stmt,-1, &statement, NULL);
         if (sqlite3_step(statement) == SQLITE_DONE)
@@ -97,12 +96,12 @@ static sqlite3_stmt *statement = nil;
 }
 
 
-- (NSArray*) findByTelephone:(NSString*)telephone
+- (NSArray*) findByTelephone:(NSString*)phone
 {
     const char *dbpath = [databasePath UTF8String];
     if (sqlite3_open(dbpath, &database) == SQLITE_OK)
     {
-        NSString *querySQL = [NSString stringWithFormat: @"select name, department, year from studentsDetail where regno=\"%@\"",registerNumber];
+        NSString *querySQL = [NSString stringWithFormat: @"select phone, name, address from flat where phone=\"%@\"",phone];
         const char *query_stmt = [querySQL UTF8String];
         NSMutableArray *resultArray = [[NSMutableArray alloc]init];
         if (sqlite3_prepare_v2(database, query_stmt, -1, &statement, NULL) == SQLITE_OK)

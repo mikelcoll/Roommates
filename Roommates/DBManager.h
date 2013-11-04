@@ -26,5 +26,5 @@
        price_internet:(double)price_internet
        price_phone:(double)price_phone
        inhabitants:(NSInteger)inhabitants;
-- (NSArray*) findByTelephone:(NSString*)telephone;
+- (NSArray*) findByTelephone:(NSString*)phone;
 @end

@@ -38,9 +38,9 @@ static sqlite3_stmt *statement = nil;
         if (sqlite3_open(dbpath, &database) == SQLITE_OK)
         {
             char *errMsg;
-            const char *sql_stmt = "create table if not exists flat (id integer primary key,"
+            const char *sql_stmt = "create table if not exists flat (id integer primary key autoincrement,"
                                                                     "name text,"
-                                                                    "adress text,"
+                                                                    "address text,"
                                                                     "phone text,"
                                                                     "m2 real,"
                                                                     "price_rent real,"
@@ -65,13 +65,21 @@ static sqlite3_stmt *statement = nil;
 }
 
 
-- (BOOL) saveData:(NSString*)registerNumber name:(NSString*)name
-       department:(NSString*)department year:(NSString*)year;
+- (BOOL)    saveData: (NSString*)name
+            address:(NSString*)address
+            phone:(NSString*)phone
+            m2:(double)m2
+            price_rent:(double)price_rent
+            price_water:(double)price_water
+            price_light:(double)price_light
+            price_internet:(double)price_internet
+            price_phone:(double)price_phone;
 {
     const char *dbpath = [databasePath UTF8String];
     if (sqlite3_open(dbpath, &database) == SQLITE_OK)
     {
-        NSString *insertSQL = [NSString stringWithFormat:@"insert into studentsDetail (regno,name, department, year) values (\"%d\",\"%@\", \"%@\", \"%@\")",[registerNumber integerValue], name, department, year];
+        NSString *insertSQL = [NSString stringWithFormat:@"insert into studentsDetail (name, address, phone, m2, price_rent, price_water, price_light, price_internet, price_phone) values (\"%@\",\"%@\", \"%@\", \"%g\", \"%g\", \"%g\", \"%g\", \"%g\", \"%g\" )",
+                               name, address, phone, m2, price_rent, price_water, price_light, price_internet, price_phone];
         const char *insert_stmt = [insertSQL UTF8String];
         sqlite3_prepare_v2(database, insert_stmt,-1, &statement, NULL);
         if (sqlite3_step(statement) == SQLITE_DONE)

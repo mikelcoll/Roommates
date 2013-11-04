@@ -16,8 +16,15 @@
 
 +(DBManager*)getSharedInstance;
 -(BOOL)createDB;
--(BOOL) saveData:(NSString*)registerNumber name:(NSString*)name
-      department:(NSString*)department year:(NSString*)year;
+-(BOOL)saveData: (NSString*)name
+       address:(NSString*)address
+       phone:(NSString*)phone
+       m2:(double)m2
+       price_rent:(double)price_rent
+       price_water:(double)price_water
+       price_light:(double)price_light
+       price_internet:(double)price_internet
+       price_phone:(double)price_phone;
 -(NSArray*) findByRegisterNumber:(NSString*)registerNumber;
 
 @end

@@ -73,7 +73,7 @@ static sqlite3_stmt *statement = nil;
             price_water:(double)price_water
             price_light:(double)price_light
             price_internet:(double)price_internet
-            price_phone:(double)price_phone;
+            price_phone:(double)price_phone
 {
     const char *dbpath = [databasePath UTF8String];
     if (sqlite3_open(dbpath, &database) == SQLITE_OK)

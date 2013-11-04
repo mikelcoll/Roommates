@@ -108,15 +108,15 @@ static sqlite3_stmt *statement = nil;
         {
             if (sqlite3_step(statement) == SQLITE_ROW)
             {
-                NSString *name = [[NSString alloc] initWithUTF8String:
+                NSString *phone = [[NSString alloc] initWithUTF8String:
                                   (const char *) sqlite3_column_text(statement, 0)];
-                [resultArray addObject:name];
-                NSString *department = [[NSString alloc] initWithUTF8String:
+                [resultArray addObject:phone];
+                NSString *name = [[NSString alloc] initWithUTF8String:
                                         (const char *) sqlite3_column_text(statement, 1)];
-                [resultArray addObject:department];
-                NSString *year = [[NSString alloc]initWithUTF8String:
+                [resultArray addObject:name];
+                NSString *address = [[NSString alloc]initWithUTF8String:
                                   (const char *) sqlite3_column_text(statement, 2)];
-                [resultArray addObject:year];
+                [resultArray addObject:address];
                 return resultArray;
             }
             else

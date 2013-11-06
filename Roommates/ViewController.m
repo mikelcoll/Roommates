@@ -33,5 +33,15 @@
     NSLog(@"user: %@, pass: %@", user, pass);
 }
 
+- (void)MainViewControllerDidFinish:(MainViewController *) controller {
+    [self dismissViewControllerAnimated:YES completion:^{}];
+}
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"LoginModal"]) {
+        MainViewController * detailViewController = (MainViewController *) segue.destinationViewController;
+        detailViewController.delegate = self;
+    }
+}
 @end

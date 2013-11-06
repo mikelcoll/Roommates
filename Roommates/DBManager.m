@@ -120,14 +120,13 @@ static sqlite3_stmt *statement = nil;
                 return resultArray;
             }
             else
-            {
+            
                 NSLog(@"Not found");
                 return nil;
             }
             sqlite3_reset(statement);
         }
-    }
     return nil;
-}
+    }
 
 @end

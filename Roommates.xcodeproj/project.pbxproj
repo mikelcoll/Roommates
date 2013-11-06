@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43C0CCC6182A83F900255DBB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C0CCC5182A83F900255DBB /* MainViewController.m */; };
 		43CFA3BB182664C30019494D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CFA3BA182664C30019494D /* Foundation.framework */; };
 		43CFA3BD182664C30019494D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CFA3BC182664C30019494D /* CoreGraphics.framework */; };
 		43CFA3BF182664C30019494D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CFA3BE182664C30019494D /* UIKit.framework */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43C0CCC4182A83F900255DBB /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		43C0CCC5182A83F900255DBB /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		43CFA3B7182664C30019494D /* Roommates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roommates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43CFA3BA182664C30019494D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		43CFA3BC182664C30019494D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -128,6 +131,8 @@
 				43CFA3C1182664C30019494D /* Supporting Files */,
 				B05D723218281C7200B24D8D /* DBManager.h */,
 				B05D723318281C7200B24D8D /* DBManager.m */,
+				43C0CCC4182A83F900255DBB /* MainViewController.h */,
+				43C0CCC5182A83F900255DBB /* MainViewController.m */,
 			);
 			path = Roommates;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 				43CFA3D1182664C30019494D /* ViewController.m in Sources */,
 				43CFA3CB182664C30019494D /* AppDelegate.m in Sources */,
 				43CFA3C7182664C30019494D /* main.m in Sources */,
+				43C0CCC6182A83F900255DBB /* MainViewController.m in Sources */,
 				B05D723418281C7200B24D8D /* DBManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

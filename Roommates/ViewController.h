@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MainViewController.h"
 
-@interface ViewController : UIViewController {
+@interface ViewController : UIViewController <MainViewControllerDelegate> {
     IBOutlet UITextField *username;
     IBOutlet UITextField *password;
     IBOutlet UIButton *login;
